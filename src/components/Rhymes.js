@@ -1,9 +1,9 @@
 import React,{useState, useEffect} from "react";
 import axios from "axios";
-
+import WordList from "./WordList"
 const Rhymes = () => {
-    const [rhyme,setRhyme] = useState({word:""})
-
+    const [rhyme,setRhyme] = useState([])
+    const [list,setList] = useState([])
 
     const handleChanges = e => {
         setRhyme({[e.target.name]: e.target.value});
@@ -18,6 +18,7 @@ const Rhymes = () => {
             "x-rapidapi-key": "3e6f97ba46mshd0e970af8b190bcp1daa64jsn2a48b3562207"}
         })
         .then(res =>{
+            setList(res.data.rhymes.all)
             console.log("get res",res)
         })
         
@@ -26,6 +27,7 @@ const Rhymes = () => {
     }
     console.log(rhyme)
     return(
+        <>
         <form onSubmit={handleSubmit} className = "register-form">
             <div>
                 <label>Find a rhyme for: </label>
@@ -35,6 +37,14 @@ const Rhymes = () => {
                 <button>Submit!</button>
             </div>
         </form>
+       
+        <div>
+            {list.map( i =>{
+                return(
+                    <WordList words = {i}/>
+                )
+            })}
+        </div> </>
     )
 }
 
