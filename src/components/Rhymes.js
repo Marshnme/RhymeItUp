@@ -10,7 +10,7 @@ const Rhymes = () => {
         console.log(e.target.value)
     };
 
-    const handleSubmit = e => {
+    const handleSubmitRhyme = e => {
         e.preventDefault();
         axios
         .get(`https://wordsapiv1.p.rapidapi.com/words/${rhyme.word}/rhymes`,{
@@ -19,7 +19,20 @@ const Rhymes = () => {
         })
         .then(res =>{
             setList(res.data.rhymes.all)
-            console.log("get res",res)
+            console.log("rhyme res",res)
+        })
+    }
+
+    const handleSubmitSimilar = e => {
+        e.preventDefault();
+        axios
+        .get(`https://wordsapiv1.p.rapidapi.com/words/${rhyme.word}/similarTo`,{
+            headers:{"x-rapidapi-host": "wordsapiv1.p.rapidapi.com",
+            "x-rapidapi-key": "3e6f97ba46mshd0e970af8b190bcp1daa64jsn2a48b3562207"}
+        })
+        .then(res =>{
+            setList(res.data.similarTo)
+            console.log("similar res",res)
         })
         
         
@@ -28,13 +41,16 @@ const Rhymes = () => {
     console.log(rhyme)
     return(
         <>
-        <form onSubmit={handleSubmit} className = "register-form">
+        <form className = "register-form">
             <div>
-                <label>Find a rhyme for: </label>
+                <label>Your word: </label>
                 <input onChange={handleChanges} value={rhyme.word} type="text" name="word" required></input>
             </div>
             <div>
-                <button>Submit!</button>
+                <button onClick={handleSubmitRhyme}>Find rhymes!</button>
+            </div>
+            <div>
+                <button onClick={handleSubmitSimilar}>Find similar!</button>
             </div>
         </form>
        
