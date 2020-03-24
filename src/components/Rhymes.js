@@ -55,9 +55,9 @@ const Rhymes = () => {
         </form>
        
         <div>
-            {list.map( i =>{
+            {list.map(( i ,index) =>{
                 return(
-                    <WordList words = {i}/>
+                    <WordList words = {i} unique = {index} />
                 )
             })}
         </div> </>
