@@ -1,11 +1,11 @@
 import React from "react";
-
+import './wordlist.css'
 
 
 const WordList = (props) =>{
     
     return(
-    <div key = {props.unique}>
+    <div className="singleWord"key = {props.unique}>
         <p>{props.words}</p>
     </div>
     )

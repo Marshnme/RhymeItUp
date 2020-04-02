@@ -1,6 +1,8 @@
 import React,{useState, useEffect} from "react";
 import axios from "axios";
 import WordList from "./WordList"
+import './rhymes.css';
+
 const Rhymes = () => {
     const [rhyme,setRhyme] = useState([])
     const [list,setList] = useState([])
@@ -54,7 +56,7 @@ const Rhymes = () => {
             </div>
         </form>
        
-        <div>
+        <div className = "parent">
             {list.map(( i ,index) =>{
                 return(
                     <WordList words = {i} unique = {index} />
