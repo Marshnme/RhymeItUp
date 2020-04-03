@@ -16,7 +16,7 @@ const Dashboard = () => {
 
 
     return(
-        <div className="parent">
+        <div className="dash-parent">
             <header>
                 <h1 className="title">Bad Rhyme!</h1>
             </header>
@@ -26,7 +26,9 @@ const Dashboard = () => {
                     <p>Then I realized the rhyming API I found was actually pretty terrible, so I decided to roll with it! </p>
                     <p>I hope you find laughter from these terrible rhymes as I did. Included is also a similiar word search that is completely hit or miss 😊</p>
                 </div>
-                <Link to = "/rhymes">Enter!</Link>
+                <div className="button">
+                    <Link to = "/rhymes" className="link">Enter!</Link>
+                </div>
             </main>
         </div>
     )

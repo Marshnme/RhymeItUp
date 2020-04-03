@@ -1,8 +1,8 @@
-*{
+/* *{
     border:1px solid red;
-}
+} */
 
-.parent{
+.dash-parent{
     display:flex;
     flex-direction: column;
 }
@@ -13,8 +13,26 @@
 
 .main{
     margin-top: 10rem;
+    display:flex;
+    flex-direction: column;
 }
 
 .greeting{
     line-height: 2.5rem;
+}
+
+.button{
+    border:1px solid teal;
+    border-radius: 5px;
+    width:5%;
+    padding-top:2px;
+    padding-bottom:2px;
+    background:teal;
+    align-self: center;
+    
+}
+
+.link{
+    text-decoration: none;
+    color:black;
 }
