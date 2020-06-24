@@ -43,26 +43,30 @@ const Rhymes = () => {
     console.log(rhyme)
     return(
         <>
-        <form className = "register-form">
-            <div>
-                <label>Your word: </label>
-                <input onChange={handleChanges} value={rhyme.word} type="text" name="word" required></input>
-            </div>
-            <div>
-                <button onClick={handleSubmitRhyme}>Find rhymes!</button>
-            </div>
-            <div>
-                <button onClick={handleSubmitSimilar}>Find similar!</button>
-            </div>
-        </form>
-       
-        <div className = "parent">
-            {list.map(( i ,index) =>{
-                return(
-                    <WordList words = {i} unique = {index} />
-                )
-            })}
-        </div> </>
+        <div className="master-div">
+            <form className = "register-form">
+                <div className="search-word">
+                    <label>Your word: </label>
+                    <input onChange={handleChanges} value={rhyme.word} type="text" name="word" required></input>
+                </div>
+                <div className="submits">
+                    <div className="submit-rhyme">
+                        <button onClick={handleSubmitRhyme}>Find rhymes!</button>
+                    </div>
+                    <div>
+                        <button onClick={handleSubmitSimilar}>Find similar!</button>
+                    </div>
+                </div>
+            </form>
+        
+            <div className = "parent">
+                {list.map(( i ,index) =>{
+                    return(
+                        <WordList words = {i} unique = {index} />
+                    )
+                })}
+            </div> 
+        </div></>
     )
 }
 

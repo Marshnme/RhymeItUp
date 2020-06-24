@@ -1,5 +1,23 @@
 .parent{
     display:flex;
     flex-flow: row wrap;
-    justify-content: space-evenly;
+    justify-content: space-between;
+}
+
+.search-word{
+    padding-top:2%;
+}
+
+.submits{
+    display:flex;
+    justify-content: center;
+    margin-top:1%;
+}
+
+.master-div{
+    background-color: rgb(187, 187, 187);
+    height: 100vh;
+}
+.submit-rhyme{
+    margin-right: 1%;
 }
